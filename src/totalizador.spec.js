@@ -1,4 +1,4 @@
-import { getImpuesto, getPrecioNeto } from "./totalizador";
+import { getImpuesto, getPrecioNeto,getPrecioTotalPorImpuesto } from "./totalizador";
 describe("Totalizador de ventas",()=>{
     it("Impuesto para el estado CA",()=>{
         expect(getImpuesto("CA")).toEqual(8.25);
@@ -26,6 +26,9 @@ describe("Totalizador de ventas",()=>{
 
     it("Precio neto para cantidad 23 precio por item 24.2",()=>{
         expect(getPrecioNeto(23, 24.2)).toEqual(556.6);
+    });
+    it("Precio total con impuesto para cantidad 23 precio por item 24.2 y porcentaje de impuesto de estado CA",()=>{
+        expect(getPrecioTotalPorImpuesto(23, 24.2,8.25)).toEqual(602.5195);
     });
 
 }
