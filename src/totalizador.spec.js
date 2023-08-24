@@ -8,6 +8,18 @@ describe("Totalizador de ventas",()=>{
         expect(getImpuesto("NV")).toEqual(8);
     });
 
+    it("Impuesto para el estado TX",()=>{
+        expect(getImpuesto("TX")).toEqual(6.25);
+    });
+
+    it("Impuesto para el estado AL",()=>{
+        expect(getImpuesto("AL")).toEqual(4);
+    });
+
+    it("Impuesto para el estado TX",()=>{
+        expect(getImpuesto("CA")).toEqual(8.25);
+    });
+
 }
 
 
