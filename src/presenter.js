@@ -1,4 +1,4 @@
-import sumar from "./sumador";
+import { getImpuesto } from "./totalizador";
 
 const cantItems = document.querySelector("#cant-items");
 const precioItem = document.querySelector("#precio");
@@ -11,8 +11,10 @@ form.addEventListener("submit", (event) => {
   const cant = Number.parseInt(cantItems.value);
   const precio=Number.parseInt(precioItem.value);
   const estadoTexto = estado.value; 
+  const impuesto = getImpuesto(estadoTexto); 
   div.innerHTML = "<p>" + cant + "</p>";
   div.innerHTML += "<p>" + precio + "</p>";
   div.innerHTML += "<p>" + estadoTexto + "</p>";
+  div.innerHTML += "<p>" + impuesto + "</p>";
   
 });
