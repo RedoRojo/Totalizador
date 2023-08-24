@@ -5,6 +5,6 @@ function getImpuesto(estado) {
 }
 
 function getPrecioNeto(cantItems, precioItem) {
-    return 100;
+    return cantItems * precioItem;
 }
 export {getImpuesto, getPrecioNeto};

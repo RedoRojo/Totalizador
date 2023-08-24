@@ -24,6 +24,10 @@ describe("Totalizador de ventas",()=>{
         expect(getPrecioNeto(5, 20)).toEqual(100);
     });
 
+    it("Precio neto para cantidad 23 precio por item 24.2",()=>{
+        expect(getPrecioNeto(23, 24.2)).toEqual(556.6);
+    });
+
 }
 
 
