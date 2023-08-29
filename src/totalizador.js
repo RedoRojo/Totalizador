@@ -26,7 +26,10 @@ export default class Totalizador{
 
     getDescuento() {
         let descuentos = {1000: 3, 3000: 5, 7000: 7, 10000: 10, 30000: 15}; 
+        // if(Object.values(descuentos).includes(this.getPrecioNeto())) 
+        if(descuentos[this.getPrecioNeto()] == undefined) return 0;
         return descuentos[this.getPrecioNeto()];
+        // else return 0;
     }
 
     getPrecioDescuento() {
