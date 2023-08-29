@@ -112,6 +112,11 @@ describe("Totalizador de ventas",()=>{
         let tot = new Totalizador("NV", 1000, 10); 
         expect(tot.getPrecioTotalDescuento()).toEqual(9800);
     });
+
+    it("Precio total con el porcentaje de descuento que correponde a 30000",()=>{
+        let tot = new Totalizador("NV", 1000, 30); 
+        expect(tot.getPrecioTotalDescuento()).toEqual(27900);
+    });
 }
 
 );
