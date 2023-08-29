@@ -48,6 +48,11 @@ describe("Totalizador de ventas",()=>{
         expect(tot.getPrecioImpuesto()).toEqual(44.53);
     });
 
+    it("Precio total segun el impuesto y el precio neto para cant:23, precio:10, estado: TX", ()=>{
+        let tot = new Totalizador("TX", 23, 10); 
+        expect(tot.getPrecioTotal()).toEqual(245.30);
+    })
+
 }
 
 );

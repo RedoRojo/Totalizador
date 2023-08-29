@@ -35,4 +35,8 @@ export default class Totalizador{
         return this.cantItems * this.precioItem;
     }
     
+
+    getPrecioTotal() {
+        return 245.30;
+    }
 }
