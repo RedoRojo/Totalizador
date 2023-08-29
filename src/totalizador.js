@@ -37,6 +37,6 @@ export default class Totalizador{
     
 
     getPrecioTotal() {
-        return 245.30;
+        return this.getPrecioNeto() + this.getPrecioImpuesto(); 
     }
 }
