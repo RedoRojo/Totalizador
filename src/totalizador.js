@@ -26,13 +26,13 @@ export default class Totalizador{
 
     getDescuento() {
         let descuentos = {1000: 3, 3000: 5, 7000: 7, 10000: 10, 30000: 15}; 
-        return descuentos[this.cantItems];
+        return descuentos[this.getPrecioNeto()];
     }
 
     getPrecioDescuento() {
         let porcen = this.getDescuento() / 100; 
         let precioDescuento = this.getPrecioNeto() * porcen; 
-        precioDescuento = Number(precioImpuesto.toFixed(2))
+        precioDescuento = Number(precioDescuento.toFixed(2))
         return precioDescuento;  
     }
 
@@ -50,5 +50,9 @@ export default class Totalizador{
 
     getPrecioTotal() {
         return this.getPrecioNeto() + this.getPrecioImpuesto(); 
+    }
+
+    getPrecioTotalDescuento() {
+        return this.getPrecioNeto() + this.getPrecioImpuesto() - this.getPrecioDescuento(); 
     }
 }

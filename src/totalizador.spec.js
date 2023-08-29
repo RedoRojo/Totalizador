@@ -61,31 +61,41 @@ describe("Totalizador de ventas",()=>{
     it("Descuento para cantidad de items: 1000 ",()=>{
         let tot = new Totalizador(); 
         tot.setCantItems(1000);
+        tot.setPrecioItems(1);
         expect(tot.getDescuento()).toEqual(3);
     });
 
     it("Descuento para cantidad de items: 3000 ",()=>{
         let tot = new Totalizador(); 
         tot.setCantItems(3000);
+        tot.setPrecioItems(1);
         expect(tot.getDescuento()).toEqual(5);
     });
 
     it("Descuento para cantidad de items: 7000 ",()=>{
         let tot = new Totalizador(); 
         tot.setCantItems(7000);
+        tot.setPrecioItems(1);
         expect(tot.getDescuento()).toEqual(7);
     });
 
     it("Descuento para cantidad de items: 10000 ",()=>{
         let tot = new Totalizador(); 
         tot.setCantItems(10000);
+        tot.setPrecioItems(1);
         expect(tot.getDescuento()).toEqual(10);
     });
 
     it("Descuento para cantidad de items: 30000 ",()=>{
         let tot = new Totalizador(); 
         tot.setCantItems(30000);
+        tot.setPrecioItems(1);
         expect(tot.getDescuento()).toEqual(15);
+    });
+    
+    it("Precio total con el porcentaje de descuento que correponde a 1000",()=>{
+        let tot = new Totalizador("NV", 1000, 1); 
+        expect(tot.getPrecioTotalDescuento()).toEqual(1050);
     });
 }
 
