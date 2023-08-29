@@ -24,14 +24,15 @@ export default class Totalizador{
         return impuestos[this.estado];
     }
 
+    getPrecioImpuesto() { 
+        let porcen = this.getImpuesto() / 100; 
+        let precioImpuesto = this.getPrecioNeto() * porcen; 
+        precioImpuesto = Number(precioImpuesto.toFixed(2))
+        return precioImpuesto;  
+    }
+
     getPrecioNeto() {
         return this.cantItems * this.precioItem;
     }
     
-    getPrecioTotalPorImpuesto(){
-        let porcen = this.getImpuesto() / 100; 
-        let precioTotalImpuesto = this.getPrecioNeto() * porcen + this.getPrecioNeto(); 
-        return precioTotalImpuesto;
-    }
-
 }

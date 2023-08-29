@@ -38,14 +38,14 @@ describe("Totalizador de ventas",()=>{
         tot.setPrecioItems(24.2); 
         expect(tot.getPrecioNeto()).toEqual(556.6);
     });
-    it("Precio total con impuesto para cantidad 23 precio por item 24.2 y porcentaje de impuesto de estado CA",()=>{
-        let tot = new Totalizador("CA", 23, 24.2); 
-        expect(tot.getPrecioTotalPorImpuesto()).toEqual(602.5195);
+    it("Precio del impuesto para cantidad 23 precio por item 24.2 y porcentaje de impuesto de estado CA",()=>{
+        let tot = new Totalizador("CA", 3, 23); 
+        expect(tot.getPrecioImpuesto()).toEqual(5.69);
     });
 
-    it("Precio total con impuesto para cantidad 23 precio por item 24.2 y porcentaje de impuesto de estado NV",()=>{
+    it("Precio del impuesto para cantidad 23 precio por item 24.2 y porcentaje de impuesto de estado NV",()=>{
         let tot = new Totalizador("NV", 23, 24.2); 
-        expect(tot.getPrecioTotalPorImpuesto()).toEqual(601.128);
+        expect(tot.getPrecioImpuesto()).toEqual(44.53);
     });
 
 }
