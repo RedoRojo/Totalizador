@@ -58,6 +58,12 @@ describe("Totalizador de ventas",()=>{
         expect(tot.getPrecioTotal()).toEqual(248.4);
     })
 
+    it("Descuento para cantidad de items: 1000 ",()=>{
+        let tot = new Totalizador(); 
+        tot.setCantItems(1000);
+        expect(tot.getDescuento()).toEqual(3);
+    });
+
 }
 
 );

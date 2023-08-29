@@ -24,6 +24,10 @@ export default class Totalizador{
         return impuestos[this.estado];
     }
 
+    getDescuento() {
+        return 3;
+    }
+
     getPrecioImpuesto() { 
         let porcen = this.getImpuesto() / 100; 
         let precioImpuesto = this.getPrecioNeto() * porcen; 
