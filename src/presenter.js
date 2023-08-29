@@ -12,10 +12,7 @@ form.addEventListener("submit", (event) => {
   const precio=Number.parseInt(precioItem.value);
   const estadoTexto = estado.value; 
   let tot = new Totalizador(estadoTexto, cant, precio); 
-  div.innerHTML = "<p>" + cant + "</p>";
-  div.innerHTML += "<p>" + precio + "</p>";
-  div.innerHTML += "<p>" + estadoTexto + "</p>";
-  div.innerHTML += "<p>" + tot.getImpuesto() + "</p>";
   div.innerHTML += "<p> Precio Neto ("+cant+"*$"+precio+"): $"+ tot.getPrecioNeto() + "</p>";
   div.innerHTML += "<p> Impuesto para " +estadoTexto+"("+ tot.getImpuesto() +"%): "+ tot.getPrecioImpuesto() + "</p>";
+  div.innerHTML += "<p> Precio Total (+impuesto): " + tot.getPrecioTotal() + "</p>";
 });
